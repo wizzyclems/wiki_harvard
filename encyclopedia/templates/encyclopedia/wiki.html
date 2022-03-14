@@ -1,0 +1,26 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {{title}}
+{% endblock %}
+
+{% block body %}
+
+<br />
+<br />
+
+{% if not error %}
+<a style="text-decoration:underline;" href="{% url 'edit' title %}">Edit {{ title }}</a>
+{% endif %}
+<br />
+<br />
+
+  {{content|safe}}
+
+  <br />
+  <br />
+
+  {% if not error %}
+  <a style="text-decoration:underline;" href="{% url 'edit' title %}">Edit {{ title }}</a></li>
+  {% endif %}
+{% endblock %}
